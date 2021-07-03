@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pasażerowie</title>
+</head>
+<body>
+  <!-- Jendolinijkowe komentarze -->
+  {# {{ passengers }} #}
+  <!-- Wielolinijkowe komentarze -->
+  {% comment %}
+     {# {{ passengers }} #}
+     {# {{ passengers }} #}
+  {% endcomment %}
+
+  <!-- Czy to zadziała -->
+  {% comment %}
+    {{ ", ".join(passengers) }}
+    {{ len(passengers) }}
+    {{ passengers[0] }}
+  {% endcomment %}
+  <!--  Wszystkie powyższe przykady nie działają! -->
+
+  <!--  FILTRY -->
+  <p>{{ passengers|length }}</p>
+  <p>{{ passengers|join:" . " }}</p>
+  <p>{{ passengers|length|add:"2" }}</p>
+
+<!--  To nie działa! -->
+  {% comment %}
+    {% for idx, passenger in enumerate(passengers) %}
+        {{ passenger }}
+    {% endfor %}
+  {% endcomment %}
+
+<!--Zmienn forloop przechowująca info o pętli-->
+  {% for passenger in passengers %}
+    <p> {{ passenger }} </p>
+    {{ forloop.counter }}
+    {{ forloop.first }}
+    {{ forloop.last }}
+    {{ forloop.counter0 }}
+  {% endfor %}
+
+<!--  Odwoływanie się do elementów kolekcji -->
+<!--PO INDEKSIE -->
+
+  <p>Pasażer: {{ passengers.0 }}</p>
+
+<!--  PO KLUCZU-->
+  <p>Pasażer: {{ passengers.0.age }}</p>
+
+
+<!--Inne przykłady filtrów-->
+  <p>Pasażer: {{ passengers.1.name|upper }}</p>
+  <p>Pasażer: {{ passengers.1.name|cut:"a" }}</p>
+
+</body>
+</html>

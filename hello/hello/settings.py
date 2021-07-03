@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello_app',
     #'first_app',
+    'secondapp',
+    'monday',
+    'links',
+    'inheritance',
+    'formapp1',
+
 ]
 
 MIDDLEWARE = [

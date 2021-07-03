@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zarejestruj zadanie</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="task">
+        <input type="submit" value="Zarejestruj">
+    </form>
+<h2>Zadania do zrealizowania:</h2>
+    <br>
+    <ul>
+    {% for task in tasks %}
+       <li> {{ task }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
