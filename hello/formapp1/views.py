@@ -4,6 +4,9 @@ from django.shortcuts import render
 
 TASKS=[]
 def register (request):
+   # print(request.GET)
+   # print(request.GET.get('task'))
+
     task = request.GET.get('task')
     if task:
         TASKS.append(task)

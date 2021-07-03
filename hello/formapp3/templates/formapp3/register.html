@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zarejestruj zadanie</title>
+</head>
+<body>
+    <form action="{% url 'formapp3:tasks_list' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="task">
+        <input type="submit" value="Zarejestruj">
+    </form>
+
+</body>
+</html>
