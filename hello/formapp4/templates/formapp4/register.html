@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form action="{% url 'formapp4:tasks_list' %}" method="POST">
+    <form action="{% url 'formapp4:register' %}" method="POST">
         {% csrf_token %}
         <input type="text" name="task">
         <input type="submit" value="Zarejestruj">
