@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Read</title>
+</head>
+<body>
+    <form action="{% url 'crudapp:create' %}">
+        <input type="submit" value="Dodaj nowe zdanie">
+    </form>
+<h2>Lista zadań:</h2>
+<br>
+ <ul>
+    {% for task in tasks %}
+      <li>
+<!--          {{ task.id }} -->
+          <a href="{% url 'crudapp:update' task.id %}"> {{ task }}</a>
+          <form action="{% url 'crudapp:delete' task.id%}" method="post" style="display: inline;">
+              {% csrf_token %}
+              <input type="submit" value="usuń"></form>
+      </li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>

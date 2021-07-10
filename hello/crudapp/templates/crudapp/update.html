@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+
+  <form method="POST">
+    {% csrf_token %}
+    <h2>Czy chcesz edytować wpis</h2>
+    <br>
+    <b>{{ task }}</b>
+    <br>
+
+      <input type="text" name="task" value="{{task.text}}" required>
+      <input type="submit" value="Zmień">
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+Dodaj nowe zadanie:
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="task">
+        <input type="submit" value="Zapisz!">
+    </form>
+</body>
+</html>
