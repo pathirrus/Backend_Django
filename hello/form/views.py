@@ -36,7 +36,7 @@ def contact1(request):
 
 def contact2(request):
     if request.method == "POST":
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST)        #forma związana
         if form.is_valid():
             data = form.cleaned_data
 
@@ -47,7 +47,7 @@ def contact2(request):
                 subject=data.get('subject'),
                 body=data.get('body')
             )
-        return redirect('form:contact2')
+        return redirect('form:contact2')   #forma niezwiązana
 
     form = ContactForm()
 

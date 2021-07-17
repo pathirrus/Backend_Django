@@ -1,7 +1,7 @@
 from django import forms
 from form.models import Message
 
-
+# Formularz Django
 class ContactForm(forms.Form):
     CHOICES = [
         ("question", "Pytanie"),
