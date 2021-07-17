@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <script>
+        function validate() {
+        var name = document.getElementById("name").value;
+
+        if (name.includes("$")){
+            alert("Złe imię");
+            return false;
+           } else{
+           return true;
+           }
+        }
+    </script>
+</head>
+<body>
+    <form method="post" onsubmit="return validate();">
+        {% csrf_token %}
+
+        <label for="name">Imię: </label><input type="text" name="name" id="name">
+        <label for="email">Email: </label><input type="email" name="email" id="email">
+
+        <label for="category">Kategoria: </label><select name="category" id="category">
+        <option value="question">Pytanie</option>
+        <option value="other">Inne</option>
+        </select>
+
+        <label for="subject">Tytuł: </label><input type="text" name="subject" id="subject">
+        <label for="text">Treść: </label><textarea name="body" id="text"></textarea>
+       <br>
+       <br>
+        <input type="submit" value="Wyślij formularz">
+
+    </form>
+</body>
+</html>

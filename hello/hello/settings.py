@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'formapp3',
     'formapp4',
     'crudapp',
+    'form',
 
 ]
 
